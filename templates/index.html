@@ -1,0 +1,299 @@
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+<style>
+* {
+  box-sizing: border-box;
+  
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: both;
+  opacity: 0.5;
+  font-size: 20px;
+  color:darkblue;
+  font-size:2vw;
+  
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+  font-size: 30px;
+  color: white;
+  font-size:2vw;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+  opacity: 0.5;
+  font-size:2vw;
+  width: 100%;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+
+
+    
+    
+    
+.interface {
+  border: 2px solid;
+  padding: 20px; 
+  width: 710px;
+  height: 380px;
+  resize: horizontal;
+  overflow: auto;
+  margin: 20px;
+  border: 2px solid silver;
+  outline: 5px solid silver;
+  outline-offset: 15px;
+  font-size:2vw;
+}
+.ex1{
+  position: fixed;
+  bottom:70px;
+  left: 0;
+  width: 300px;
+  border: 3px;
+  font-size: 30px;
+  color:black;
+    }
+.ex2{
+  position: fixed;
+  bottom:18px;
+  left: 0;
+  color:black;
+    }
+
+
+.multicolortext {
+        background-image: linear-gradient(to left, white,blue, indigo, white, blue,gray,yellow, white,red,yellow,violet);
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        font-size:4vw;
+      }
+.button {
+background-color: #23b83c;
+	border: 2px solid #020353;
+	color: whitesmoke;
+	padding: 0.5em 0.5em;
+	text-align: center;
+	text-decoration: none;
+	font-size: 1em;
+	display: inline-block;
+	width: 100%;
+	border-radius: 5px;
+	box-shadow: 3px 3px 8px 0 #000; 
+}
+body {
+  background-image: url("{{url_for('static', filename='background.jpg')}}");
+  background-repeat: no-repeat;
+ background-size: 100% 85%;
+    opacity: 40;
+}
+    
+h1{
+  font-size: 40px;
+  color: white;
+  opacity: 40;
+  font-size:2vw; 
+  text-align: left;
+}
+h2{
+  background-color: blueviolet; 
+  font-size: 25px;
+  color: white;
+  position: static;
+  border: 3px solid #73AD28;
+  font-size:2vw;
+  top: 10px;
+}
+
+h3{
+  font-size: 40px;
+  color:cyan;
+  font-size:2vw;  
+}
+h4{
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: both;
+  opacity: 0.5;
+  font-size: 20px;
+  color:darkblue;
+  font-size:2vw;
+    }
+
+
+</style>
+</head>
+<body>
+<center>
+
+
+<h1><span class="multicolortext"><b><u>GIFT Health Care Pvt.Ltd</u></b></span></h1>
+<h2>Welcome To Cancer Detection Portal</h2>
+
+   
+<pre>
+<div class="interface"> 
+<h4 style="color: blue;background-color:powderblue;font-family:courier;">Enter All The Value of Tumor Cell</h4>
+
+<form action="{{ url_for('predict')}}"method="post">
+
+<label for="m_radius">Mean Radius</label>
+
+<input type='text' name="m_radius" placeholder="mean radius value" required="required"/>
+
+<label for="m_texture">Mean Texture</label>
+
+<input type='text' name="m_texture" placeholder="mean texture value" required="required"/>
+
+<label for="m_peri">Mean Perimeter</label>
+
+<input type='text' name="m_peri" placeholder="mean perimeter value" required="required"/>
+
+<label for="m_area">Mean Area </label>
+
+<input type='text' name="m_area" placeholder="mean area value" required="required"/>
+
+<label for="m_smooth">Mean Smoothness</label>
+
+<input type='text' name="m_smooth" placeholder="mean smoothness value" required="required"/>
+
+<label for="m_compact">Mean Compactness</label>
+
+<input type='text' name="m_compact" placeholder="mean compactness value" required="required"/>
+
+<label for="m_conc">Mean Concavity</label>
+
+<input type='text' name="m_conc" placeholder="mean concavity value" required="required"/>
+
+<label for="m_concv">Mean Concave point</label>
+
+<input type='text' name="m_concv" placeholder="mean concave points value" required="required"/>
+
+<label for="m_sym">Mean Symmetry</label>
+
+<input type='text' name="m_sym" placeholder="mean symmetry value" required="required"/>
+
+<label for="m_frc_d">Mean fractal dimension</label>
+
+<input type='text' name="m_frc_d" placeholder="mean fractal dimension value" required="required"/>
+
+<label for="rad_err">Radius error</label>
+
+<input type='text' name="rad_err" placeholder="radius error value" required="required"/>
+
+<label for="tex_err">Texture error</label>
+
+<input type='text' name="tex_err" placeholder="texture error value" required="required"/>
+
+<label for="per_err">Perimeter error</label>
+
+<input type='text' name="per_err" placeholder="perimeter error value" required="required"/>
+
+<label for="area_err">Area error</label>
+
+<input type='text' name="area_err" placeholder="area error value" required="required"/>
+
+<label for="smooth_err">Smoothness error</label>
+
+<input type='text' name="smooth_err" placeholder="smoothness error value" required="required"/>
+
+<label for="compt_err">Compactness error</label>
+
+<input type='text' name="compt_err" placeholder="compactness error value" required="required"/>
+
+<label for="conc_err">Concavity error</label>
+
+<input type='text' name="conc_err" placeholder="concavity error value" required="required"/>
+
+<label for="concv_err">Concave points error</label>
+
+<input type='text' name="concv_err" placeholder="concave points error value" required="required"/>
+
+<label for="sym_err">Symmetry error</label>
+
+<input type='text' name="sym_err" placeholder="symmetry error value" required="required"/>
+
+<label for="frct_err">Fractal dimension error</label>
+
+<input type='text' name="frct_err" placeholder="fractal dimension error value" required="required"/>
+
+<label for="wor_rad">Worst radius</label>
+
+<input type='text' name="wor_rad"placeholder="worst radius value" required="required"/>
+
+<label for="wor_text">Worst texture</label>
+
+<input type='text' name="wor_text" placeholder="worst texture value" required="required"/>
+
+<label for="wor_peri">Worst perimeter</label>
+
+<input type='text' name="wor_peri" placeholder="worst perimeter value" required="required"/>
+
+<label for="wor_area">Worst area</label>
+
+<input type='text' name="wor_area" placeholder="worst area value" required="required"/>
+
+<label for="wor_smooth">Worst smoothness</label>
+
+<input type='text' name="wor_smooth" placeholder="worst smoothness value" required="required"/>
+
+<label for="wor_comp">Worst compactness</label>
+
+<input type='text' name="wor_comp" placeholder="worst compactness value" required="required"/>
+
+<label for="wor_conc">Worst concavity</label>
+
+<input type='text' name="wor_conc" placeholder="worst concavity value" required="required"/>
+
+<label for="wor_concp">Worst concave points</label>
+
+<input type='text' name="wor_concp" placeholder="worst concave points value" required="required"/>
+
+<label for="wor_sym">Worst symmetry</label>
+
+<input type='text' name="wor_sym" placeholder="worst symmetry value" required="required"/>
+
+<label for="wor_frctd">Worst fractal dimension</label>
+
+<input type='text' name="wor_frctd" placeholder="worst fractal dimension value" required="required"/>
+
+
+<button type="submit" class="button">Know Your Cancer Status</button>
+ 
+</form>
+<textarea>
+{{prediction_text}}
+</textarea>
+</div>
+</pre>
+</center>
+    
+    <h3><span class="ex1"><u>About Us.</span></h3>
+        <p class="ex2">Gandhi Institute For Technology, Bhubaneswar is a private engineering institution located in Bhubaneswar, Odisha, India. The institute is affiliated to BPUT and has been approved by AICTE. GIFT is an ISO 9001:2008 certified institute. Wikipedia
+Address: GIFT Engineering and Management College, Gramadiha, Gangapada, Bhubaneswar, Odisha 752054
+Phone: 078730 08142</p>
+    
+</body>
+</html>
